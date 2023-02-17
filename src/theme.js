@@ -116,6 +116,7 @@ export const tokens = (mode) => ({
     )
 });
 
+//mui theme settings
 export const themeSettings = (mode) => {
     const colors = tokens(mode);
 
@@ -124,6 +125,7 @@ export const themeSettings = (mode) => {
             mode: mode,
             ...(mode === 'dark'
             ? {
+                //palette for dark mode
                 primary: {
                     main: colors.primary[500],
                 },
@@ -133,12 +135,13 @@ export const themeSettings = (mode) => {
                 neutral: {
                     dark: colors.grey[700],
                     main: colors.grey[500],
-                    light: colors.grey[100]
+                    light: colors.grey[100],
                 },
                 background: {
                     default: colors.primary[500],
                 }
             } : {
+                //palette for light mode
                 primary: {
                     main: colors.primary[100],
                 },
@@ -148,14 +151,14 @@ export const themeSettings = (mode) => {
                 neutral: {
                     dark: colors.grey[700],
                     main: colors.grey[500],
-                    light: colors.grey[100]
+                    light: colors.grey[100],
                 },
                 background: {
                     default: "#fcfcfc",
-                }
-            })
+                },
+            }),
         },
-        typorgraphy: {
+        typography: {
             fontFamily: ['Raleway', 'sans-serif'].join(","),
             fontSize: 12,
             h1: {
