@@ -1,9 +1,14 @@
 import React from "react";
 import './LoginForm.css';
 import Card from '../Card/Card';
+import { Link } from "react-router-dom";
 
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+    const handleLogIn = () => {
+        props.onLogIn()
+    }
+
     return <Card>
         <h1 className="title">Sign In</h1>
         <p className="subTitle">Please log in using your username and password</p>
@@ -12,7 +17,10 @@ const LoginForm = () => {
                 <input type="text" placeholder="Username"></input>
                 <input type="text" placeholder="Password"></input>
             </div>
-            <input type="submit" value="Log In" className="login_button"/>
+            <Link to="../../Scenes/Global/Topbar">
+                <input type="submit" value="Log In" className="login_button"
+                    onClick={handleLogIn}/>
+            </Link>
         </form>
         <div className="link_container">
             <a href="" className="small">
