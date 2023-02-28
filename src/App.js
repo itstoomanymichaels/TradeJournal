@@ -1,14 +1,14 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ColorModeContext, themeSettings, useMode } from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import LoginForm from './Components/Login/LoginForm/LoginForm';
 import Topbar from './Scenes/Global/Topbar';
-import { useState } from 'react';
-//import "./App.css";
-//import Sidebar from '../Scenes/Global/Sidebar';
-//import Dashboard from '../Scenes/Dashboard';
-//import Dashboard from '../Scenes/Dashboard';
-//import Dashboard from '../Scenes/Dashboard';
+import Sidebar from './Scenes/Global/Sidebar';
+//import Dashboard from './Scenes/Dashboard';
+//import Log from '../Scenes/Log';
+//import P&L from '../Scenes/P&L';
+//import Orders from '../Scenes/Orders';
 //import Dashboard from '../Scenes/Dashboard';
 //import Dashboard from '../Scenes/Dashboard';
 //import Dashboard from '../Scenes/Dashboard';
@@ -29,10 +29,11 @@ function App() {
         <CssBaseline />
           <div className='app'>
           {!loggedIn && <LoginForm loggedIn={loggedIn} onLogIn={onLogIn}/>}
+          {loggedIn && <Sidebar />}
             <main className={loggedIn ? 'content': 'hiddenContent'}>
-              {loggedIn && <Topbar />}
+              <Topbar />
               <Routes>
-                <Route path="topbar" element={<Topbar />} />
+                {/*<Route path="/" element={<Dashboard />} /> */}
               </Routes>
             </main>
         </div>
